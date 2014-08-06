@@ -15,10 +15,25 @@
 		alert("您的浏览器不支持HTML5，页面会错乱。请选择Chrome，Firefox，IE9+以获得更好的浏览体验。");
 	}
 	//请求bing印象图片
-	$.vegas({
-	  src: "http://toolsapp.sinaapp.com/bingwp.php?idx="+Math.floor(Math.random() * 15), fade: 1000
+	var backg=(function(num,fadetime){
+	  		var bg=[];
+	  		for(var i=0;i<num;i++){
+	  			(function(){
+	  				var img={};
+	  				img.fade=fadetime;
+	  				img.src="http://toolsapp.sinaapp.com/bingwp.php?idx="+Math.floor(Math.random() * 15);
+	  				bg.push(img);
+	  			})();	
+			}
+			return bg;
+	  	})(6,3000);
+	//vegar插件
+	$.vegas('slideshow',{
+	  	delay: 8000,//多久换一幅图片
+		backgrounds: backg
 	})( 'overlay', {
-		src:'/vegas/overlay.png'
+		src:'/vegas/overlay.png',
+		opacity:0.6
 	});
 	$('.fancybox').fancybox();
 	$("#pagination a").on("click", function(){
