@@ -3,7 +3,8 @@
 <%- partial('google_analytics') %>
 <script src="<%- config.root %>js/jquery.imagesloaded.min.js"></script>
 <script src="<%- config.root %>js/gallery.js"></script>
-
+<script src="<%- config.root %>js/jquery.jruif.js"></script>
+<link rel="stylesheet" href="<%- config.root %>js/jruif.css" media="screen" type="text/css">
 <% if (theme.fancybox){ %>
 <link rel="stylesheet" href="<%- config.root %>fancybox/jquery.fancybox.css" media="screen" type="text/css">
 <script type="text/javascript" src="/vegas/jquery.vegas.js"></script>
@@ -14,6 +15,9 @@
 	if(!(elem.getContext && elem.getContext('2d'))){
 		alert("您的浏览器不支持HTML5，页面会错乱。请选择Chrome，Firefox，IE9+以获得更好的浏览体验。");
 	}
+	$("h1").jruif({
+		rollingLinks: true
+	});
 	//请求bing印象图片
 	var backg=(function(num,fadetime){
 	  		var bg=[];
@@ -41,4 +45,5 @@
 	});
 })(jQuery);
 </script>
+
 <% } %>
