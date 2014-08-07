@@ -3,6 +3,7 @@ date: 2014-08-06 17:17:37
 tags:
 ---
 
+    转载自网络
 我热爱 jQuery，且尽管我认为自己算是一名高级 JavaScript 开发者，我从来没有试过由头到尾把 jQuery 的源码看一遍，直到现在。这里分享一些我一路下来学到的东西：
 
 注意：我使用 $.fn.method() 语法来表示调用一组匹配元素的方法。比如当我说 $.fn.addClass，则表示$('div').addClass('blue') 或者 $('a.active').addClass('in-use') 此类的用法。$.fn 是 jQuery 包装元素的原型。
