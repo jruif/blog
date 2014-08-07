@@ -8,7 +8,7 @@ jruif's blog
 
 由于hexo是基于nodejs的，所以必须先安装nodejs，再安装hero，使用
 ```bash
-$ npm install -g hero
+$ npm install -g hexo
 ```
 安装好以后，就可以clone我的博客这个库了，clone完以后使用
 ```bash
@@ -18,6 +18,6 @@ $ npm install
 
 再使用
 ```bash
-$ hero server
+$ hexo server
 ```
 即可运行本程序，只需在浏览器中输入localhos:4000即可。
