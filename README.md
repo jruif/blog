@@ -18,6 +18,6 @@ $ npm install
 
 再使用
 ```bash
-hero server
+$ hero server
 ```
 即可运行本程序，只需在浏览器中输入localhos:4000即可。
