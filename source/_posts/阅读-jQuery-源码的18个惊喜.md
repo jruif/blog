@@ -9,6 +9,7 @@ tags:
 
 **1. Sizzle** 的权重：Sizzle 是 jQuery 用于在 DOM 找元素的的选择器引擎，基于 CSS 选择器。正是它将 $('div.active')转换成可操作的元素数组。我知道 Sizzle 占了 jQuery 相当大的部分，但它的庞大还是吓到了我。按行数来说它很无疑是 jQuery 中唯一最庞大的特性。我估计它占了总代码库的 22%，而第二大的特性—— $.ajax 只占了 8%。
 
+<!-- more -->
 **2. $.grep：**这个方法与 Underscore 的 _.filter 类似。接受两个参数，一个元素数组和一个函数，对每个元素依次执行函数，返回执行结果为 true 的元素数组。
 
 **3. 冒泡禁止：**jQuery 明文禁止 load 事件冒泡。从内部看，jQuery 在所有的 load 事件中传入特殊的 noBubble: true标记，所以 image.load 事件才不会冒泡到 window 上错误地触发 window.load 事件。
