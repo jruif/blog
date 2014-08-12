@@ -4,11 +4,11 @@
 
 # Site
 title: Jruif's Blog
-subtitle: "一曲清风月，两盏浊酒杯"
-description: "求是，坚持乎；求知，反复而"
+subtitle: "求是，坚持乎；求知，反复而"
+description: "jruif,jruif博客,Javascript,css3,nodejs"
 author: jruif
 email: 597710271@qq.com
-language: 
+language: zh-CN
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
