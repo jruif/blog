@@ -2,9 +2,10 @@ title: 通过终端调试 AngularJS 应用
 date: 2014-08-13 15:25:52
 tags: [控制台,angularjs,抓包,javascript]
 ---
+	本文来自网络，如有侵权请联系管理员
 当我们构建AngularJS应用时，通过浏览器（如Chrome，Firefox和IE）的JavaScript控制台访问应用中隐藏的数据和服务总会有些困难。下面是一些简单的技巧可以帮助我们通过Javascript控制台来查看或者控制正在运行的Angular应用，使得应用可以比较容易进行测试，修改，甚至实时的修改我们的Angular应用：
 
-
+<!--more-->
 ###1、访问作用域
 通过一行简单的JS程序访问页面中任何作用域（甚至是隔离的作用域！）：
 ```Javascript
