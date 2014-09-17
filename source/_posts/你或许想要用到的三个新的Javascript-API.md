@@ -1,6 +1,6 @@
 title: 你或许想要用到的三个新的Javascript API
 date: 2014-08-05 11:19:48
-tags:
+tags: [Web Alarms,Presentation,Standby,新API]
 ---
 	本文由 伯乐在线 - 刘忻沂 翻译自 Aurelio De Rosa。
 
@@ -11,7 +11,17 @@ tags:
 废话不多说，现在开始！
 <!-- more -->
 
-###Web Alarms API
+<!-- MarkdownTOC -->
+
+- [Web Alarms API](#web-alarms-api)
+- [Presentation API](#presentation-api)
+- [Standby API](#standby-api)
+- [总结](#总结)
+
+<!-- /MarkdownTOC -->
+
+
+### Web Alarms API
 
 　　Web Alarms API让你可以配置设备的闹铃设置，从而能够安排通知消息或让某个特定的应用在指定的时间点启动。这个API最典型的用法会涉及到像闹钟，日历，或其他任何需要在特定时间进行特定操作的程序。
 
@@ -40,7 +50,7 @@ request.onerror = function (e) {
 ```
 　　如果你想要了解更多关于Web Alarms API，请参阅[相关细节文档。](http://www.w3.org/TR/web-alarms/)
 
-###Presentation API
+### Presentation API
 　　Presentation API的目标就是让投影仪或TV这样的第二显示设备能够被Web使用，包括所有通过有线（HDMI，DVI等）连接以及通过无线（MiraCast, Chromecast, DLNA, AirPlay等）的设备。这个API所做的就是在请求页面与第二显示设备上的演示页面之间实现消息互通。
 
 　　请注意该API细节并不属于W3C标准，也不在W3C标准计划当中。这个API需要通过window.navigator对象下的presentation属性来使用。该属性提供了一个叫requestSession()函数，以及present和availablechange两个事件。requestSession()函数可以用来启动或恢复第二显示设备上的演示。它会返回一个session对象指代当前的演示。当通过requestSession()传入的url里面的演示内容被加载完成后，演示屏幕的页面会收到present事件。最后，在第一张演示出现后或者最后一张演示完成后会发出availablechange事件。
@@ -77,7 +87,7 @@ function show() {
 ```
 　　如果你想要了解更多关于Presentation API的消息，[可以看看最终报告。](http://webscreens.github.io/presentation-api)
 
-###Standby API
+### Standby API
 　　Standby API让你可以在顶层浏览器页面中请求屏幕持续显示锁。这可以防止设备进入省电状态（例如屏幕自动关闭）。这个功能对有些web应用来说至关重要。例如，想像一下你正在驾车并在手机上使用基于web的导航软件（非本地应用）。如果你不去触碰屏幕的话，你的手机的屏幕会自动关闭，除非你事前在手机上进行过相关的设置。在这样的情况下，通常你是想要让屏幕保持显示状态的。这恰恰是这个API适用的地方。
 
 这个API需要通过window.navigator对象下的wakeLock属性来使用。它会提供两个函数：
@@ -103,7 +113,7 @@ navigator.wakeLock.release("display");
 ```
 　　如果你想要了解关于Standby API的更多信息，可以参考这个[非官方草案。](http://boiler23.github.io/screen-wake/)
 
-###总结
+### 总结
 
 　　在这篇文章里我给大家介绍了一些崭新的JS API。我要再次强调因为它们都还处在非常早期的阶段，所以目前没有浏览器支持。因此我们也没法实际地操作它们。然而正因为它们如此之新大家现在都有机会跟进它们接下来的发展甚至参与帮助它们的细节设计的完善。
 

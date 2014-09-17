@@ -3,6 +3,26 @@ date: 2014-09-15 11:14:41
 tags: [数组,length,typeof,instanceof,setTimeout,setInterval]
 ---
 	本文来自网络，如有侵权请联系管理员
+目录
+===
+<!-- MarkdownTOC -->
+
+- [数组](#数组)
+    - [遍历](#遍历)
+    - [length属性](#length属性)
+    - [Array 构造函数](#array-构造函数)
+- [类型](#类型)
+    - [typeof 操作符](#typeof-操作符)
+    - [instanceof 操作符](#instanceof-操作符)
+- [undefined 和 null](#undefined-和-null)
+    - [ndefined 的值](#ndefined-的值)
+    - [处理 undefined 值的改变](#处理-undefined-值的改变)
+    - [null 的用处](#null-的用处)
+- [其他](#其他)
+    - [setTimeout 和 setInterval](#settimeout-和-setinterval)
+    - [setInterval 的堆调用](#setinterval-的堆调用)
+
+<!-- /MarkdownTOC -->
 
 ## 数组
 
@@ -94,21 +114,21 @@ JavaScript 类型表格
 ```javascript
 Value               Class      Type
 -------------------------------------
-"foo"               String     string
-new String("foo")   String     object
-1.2                 Number     number
-new Number(1.2)     Number     object
+"foo"               String     String
+new String("foo")   String     Object
+1.2                 Number     Number
+new Number(1.2)     Number     Object
 true                Boolean    boolean
-new Boolean(true)   Boolean    object
-new Date()          Date       object
-new Error()         Error      object
-[1,2,3]             Array      object
-new Array(1, 2, 3)  Array      object
+new Boolean(true)   Boolean    Object
+new Date()          Date       Object
+new Error()         Error      Object
+[1,2,3]             Array      Object
+new Array(1, 2, 3)  Array      Object
 new Function("")    Function   function
-/abc/g              RegExp     object (function in Nitro/V8)
-new RegExp("meow")  RegExp     object (function in Nitro/V8)
-{}                  Object     object
-new Object()        Object     object
+/abc/g              RegExp     Object (function in Nitro/V8)
+new RegExp("meow")  RegExp     Object (function in Nitro/V8)
+{}                  Object     Object
+new Object()        Object     Object
 ```
 上面表格中，Type 一列表示 typeof 操作符的运算结果。可以看到，这个值在大多数情况下都返回 "object"。
 
