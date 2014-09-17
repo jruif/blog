@@ -10,17 +10,17 @@ tags: [数组,length,typeof,instanceof,setTimeout,setInterval]
 - [数组](#数组)
     - [遍历](#遍历)
     - [length属性](#length属性)
-    - [Array 构造函数](#array-构造函数)
+    - [Array构造函数](#array构造函数)
 - [类型](#类型)
-    - [typeof 操作符](#typeof-操作符)
-    - [instanceof 操作符](#instanceof-操作符)
-- [undefined 和 null](#undefined-和-null)
-    - [ndefined 的值](#ndefined-的值)
-    - [处理 undefined 值的改变](#处理-undefined-值的改变)
-    - [null 的用处](#null-的用处)
+    - [typeof操作符](#typeof操作符)
+    - [instanceof操作符](#instanceof操作符)
+- [undefined和null](#undefined和null)
+    - [undefined的值](#undefined的值)
+    - [处理undefined值的改变](#处理undefined值的改变)
+    - [null的用处](#null的用处)
 - [其他](#其他)
-    - [setTimeout 和 setInterval](#settimeout-和-setinterval)
-    - [setInterval 的堆调用](#setinterval-的堆调用)
+    - [setTimeout和setInterval](#settimeout和setinterval)
+    - [setInterval的堆调用](#setinterval的堆调用)
 
 <!-- /MarkdownTOC -->
 
@@ -68,7 +68,7 @@ foo[5] = undefined;
 为了更好的性能，推荐使用普通的 for 循环并缓存数组的 length 属性。 
 使用 for in 遍历数组被认为是不好的代码习惯并倾向于产生错误和导致性能问题。
 
-### Array 构造函数
+### Array构造函数
 
 由于 Array 的构造函数在如何处理参数时有点模棱两可，因此总是推荐使用数组的字面语法 - [] - 来创建数组。
 ```javascript
@@ -102,7 +102,7 @@ new Array(count + 1).join(stringToRepeat);
 
 ## 类型
 
-### typeof 操作符
+### typeof操作符
 
 typeof 操作符（和 instanceof 一起）或许是 JavaScript 中最大的设计缺陷， 因为几乎不可能从它们那里得到想要的结果。
 
@@ -137,7 +137,7 @@ Class 一列表示对象的内部属性 [[Class]] 的值。
 JavaScript 标准文档中定义: [[Class]] 的值只可能是下面字符串中的一个： Arguments, Array, Boolean, Date, Error, Function, JSON, Math, Number, Object, RegExp, String.
 为了获取对象的 [[Class]]，我们需要使用定义在 Object.prototype 上的方法 toString。
 
-### instanceof 操作符
+### instanceof操作符
 
 instanceof 操作符用来比较两个操作数的构造函数。只有在比较自定义的对象时才有意义。 如果用来比较内置类型，将会和 typeof 操作符 一样用处不大。
 
@@ -153,7 +153,7 @@ Bar.prototype = Foo;
 new Bar() instanceof Foo; // false
 ```
 
-#### instanceof 比较内置类型
+#### instanceof比较内置类型
 ```javascript
 new String('foo') instanceof String; // true
 new String('foo') instanceof Object; // true
@@ -167,9 +167,9 @@ new String('foo') instanceof Object; // true
 
 instanceof 操作符应该仅仅用来比较来自同一个 JavaScript 上下文的自定义对象。 正如 typeof 操作符一样，任何其它的用法都应该是避免的
 
-## undefined 和 null
+## undefined和null
 
-###undefined 的值
+### undefined的值
 
 undefined 是一个值为 undefined 的类型。
 
@@ -186,7 +186,7 @@ ES5 提示: 在 ECMAScript 5 的严格模式下，undefined 不再是 可写的�
 + 函数参数没有被显式的传递值。
 + 任何被设置为 undefined 值的变量。
 
-### 处理 undefined 值的改变
+### 处理undefined值的改变
 
 由于全局变量 undefined 只是保存了 undefined 类型实际值的副本， 因此对它赋新值不会改变类型 undefined 的值。
 
@@ -211,7 +211,7 @@ var undefined = 123;
 
 译者注：这里有点绕口，其实很简单。如果此函数内没有其它需要声明的变量，那么 var 总共 4 个字符（包含一个空白字符） 就是专门为 undefined 变量准备的，相比上个例子多出了 4 个字节。
 
-### null 的用处
+### null的用处
 
 JavaScript 中的 undefined 的使用场景类似于其它语言中的 null，实际上 JavaScript 中的 null 是另外一种数据类型。
 
@@ -219,7 +219,7 @@ JavaScript 中的 undefined 的使用场景类似于其它语言中的 null，�
 
 ## 其他
 
-### setTimeout 和 setInterval
+### setTimeout和setInterval
 
 由于 JavaScript 是异步的，可以使用 setTimeout 和 setInterval 来计划执行函数。
 
@@ -245,7 +245,7 @@ new Foo();
 
 注意: setTimeout 的第一个参数是函数对象，一个常犯的错误是这样的 setTimeout(foo(), 1000)， 这里回调函数是 foo 的返回值，而不是foo本身。 大部分情况下，这是一个潜在的错误，因为如果函数返回 undefined，setTimeout 也不会报错。
 
-### setInterval 的堆调用
+### setInterval的堆调用
 
 setTimeout 只会执行回调函数一次，不过 setInterval - 正如名字建议的 - 会每隔 X 毫秒执行函数一次。 但是却不鼓励使用这个函数。
 
