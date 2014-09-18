@@ -4,7 +4,7 @@ tags: [数组,length,typeof,instanceof,setTimeout,setInterval]
 ---
 	本文来自网络，如有侵权请联系管理员
 目录
-===
+---
 <!-- MarkdownTOC -->
 
 - [数组](#数组)
@@ -29,6 +29,7 @@ tags: [数组,length,typeof,instanceof,setTimeout,setInterval]
 ### 遍历 方法
 
 为了达到遍历数组的最佳性能，推荐使用经典的 for 循环。
+
 ```javascript
 var list = [1, 2, 3, 4, 5, ...... 100000000];
 for(var i = 0, l = list.length; i < l; i++) {
