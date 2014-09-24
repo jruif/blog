@@ -23,6 +23,8 @@ addthis:
 
 fancybox: true
 
-google_analytics: UA-53493334-1
-baidu_analytics: UA-53493334-1
+analytics: true
+## 谷歌统计需要id
+google_analytics: false   
+baidu_analytics: true
 rss:

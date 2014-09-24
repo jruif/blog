@@ -98,7 +98,7 @@
                 resize( $current, options );
 
                 if ( options.loading ) {
-                    loaded();
+                    loaded(options.fade);
                 }
 
                 $( 'body' ).trigger( 'vegasload', [ $current.get(0), step - 1 ] );
@@ -403,8 +403,8 @@
     }
 
     // Hide the loading indicator
-    function loaded() {
-        $loading.fadeOut( 'fast', function() {
+    function loaded(fadeTime) {
+        $loading.fadeOut( fadeTime||'fast', function() {
             $( this ).remove();
         });
     }

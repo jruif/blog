@@ -2,11 +2,12 @@
 ///	2014/8/7
 ///	By:Jruif
 ///
-(function($) {
+(function($,undefined) {
 	$.fn.jruif = function(options) {
 		var _this = $(this);
 		var config = {
-			rollingLinks: true //bool值
+			rollingLinks: true, //bool值
+			slideLoad:false
 		}
 		$.extend(config, options);
 		var css3 = {
@@ -17,13 +18,15 @@
 				return 'perspective' in document.body.style || 'WebkitPerspective' in document.body.style || 'MozPerspective' in document.body.style || 'msPerspective' in document.body.style || 'OPerspective' in document.body.style;
 			}
 		}
-		init();
 
 		function init() {
 			if (config.rollingLinks) {
 				disableRollingLinks();
 			} else {
 				enableRollingLinks();
+			}
+			if(config.slideLoad){
+				slideLoading();
 			}
 		}
 
@@ -66,6 +69,39 @@
 				});
 			}
 		}
+
+		/**
+		 * 缓动加载
+		 */
+		var $article=null;
+		function slideLoading(){
+			$article=$(".post").clone();
+			$(".post").remove();
+			$article.eq(0)
+				.css("margin-top","1000px");
+			setTimeout(function(){
+				slideLoaded(1);
+				setTimeout(function(){
+					slideLoaded(2);
+				}, 1000);
+			}, 1000);
+			$(document).on("scroll",function(){
+				//slideLoaded(n)
+			});
+		}
+		function slideLoaded(n){
+			if(arguments[0]>=$article.length)
+				return false;
+			if(n>0){
+				$article.eq(n-1)
+					.appendTo("#wrapper")
+					.css("margin-top","0px");
+				$article.eq(n)
+					.css("margin-top","1000px");
+			}
+		}
+		
+		init();
 		return this;
 	}
 })(window.jQuery || jQuery)
