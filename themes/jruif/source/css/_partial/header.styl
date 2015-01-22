@@ -16,26 +16,51 @@
     font-weight normal
     line-height 1
     margin-top 10px
-  .avatar
-    border-radius avatar-radius
-    -webkit-border-radius avatar-radius
-    margin-left 20px
-
+  
   .header-myinfo
-    display: inline-block;
-    margin: 10px 0 0 30px;
+    margin: 0 30px;
+    @media screen and (min-width: 1001px)
+      width 45%
+    @media screen and (max-width: 1000px)
+      width: 404px;
+    @media screen and (max-width: 600px)
+      margin: 5px 0 0 15px;
+      width 92%
+      
+    &>a
+      display inline-block
+    .header-myinfo-con
+      overflow hidden
+      padding-top 10px
+      padding-left 20px
+      @media screen and (max-width: 600px)
+        padding-top: 5px;
     .header-title
-      margin-bottom: 15px;
+      margin-bottom 15px
       color color-font
     .header-subtitle
       color color-meta
+      
+  .avatar
+    border-radius avatar-radius
+    -webkit-border-radius avatar-radius
+    @media screen and (max-width: 600px)
+      width 60px
+
 
   #main-nav
     font-family font-title
     font-size 2.5em
     line-height 1.2em
-    margin-right 30px
     margin-top 30px
+    overflow hidden
+    @media screen and (max-width: 900px)
+      font-size 1.5em
+      margin-top: 45px
+    @media screen and (max-width: 800px)
+      font-size 1.5em
+      margin-top 20px
+      float right
     ul
       list-style none
       li
@@ -44,4 +69,4 @@
     a
       padding 10px
       transition all 0.3s
-      text-shadow 0 0 30px color-meta
+      text-shadow 0 0 10px color-meta
