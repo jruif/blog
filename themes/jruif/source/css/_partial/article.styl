@@ -3,8 +3,10 @@ icon-gap = 25px
 
 article
   background block-background
-  opacity 0.8
-  transition 0.5s
+  transition 0.5
+  padding-bottom 15px
+  & + article
+    padding-top 10px
   &:hover
     opacity 1
   &.page
@@ -24,7 +26,6 @@ article
 
   .post-content
     padding 20px 20px 15px
-    margin-bottom 20px
     position relative
     @media screen and (max-width: 600px)
       padding-left 20px
